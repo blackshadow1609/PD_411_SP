@@ -289,7 +289,6 @@ public:
 				HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 				SetConsoleTextAttribute(hConsole, 0x4F);
 				cout << " LOW FUEL ";
-				//cout << " Не заправишься, пойдешь пешком! ";
 				SetConsoleTextAttribute(hConsole, 0x07);
 			}
 			cout << endl;
