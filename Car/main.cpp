@@ -136,7 +136,7 @@ class Car
 	int speed;
 	int acceleration;
 	bool driver_inside;
-	struct //Threads
+	struct 
 	{
 		std::thread panel_thread;
 		std::thread engine_idle_thread;
@@ -165,7 +165,6 @@ public:
 	void get_in()
 	{
 		driver_inside = true;
-		//panel();
 		threads.panel_thread = std::thread(&Car::panel, this);
 	}
 	void get_out()
@@ -221,7 +220,6 @@ public:
 		{
 			key = 0;
 			if(_kbhit()) key = _getch();
-			//cout << (int) key << endl;
 			switch (key)
 			{
 			case Enter:
@@ -289,7 +287,6 @@ public:
 				HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 				SetConsoleTextAttribute(hConsole, 0x4F);
 				cout << " LOW FUEL ";
-				//cout << " Не заправишься, пойдешь пешком! ";
 				SetConsoleTextAttribute(hConsole, 0x07);
 			}
 			cout << endl;
